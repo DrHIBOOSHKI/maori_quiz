@@ -9,6 +9,14 @@ def get_age():
     return age_local
 
 
+# function to format text output
+def formatter(symbol, text):
+    sides = symbol * 3
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = symbol * len(formatted_text)
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
+
+
 # Main routine
 name = get_name()   # 1st function
 age = get_age()   # 2nd function
@@ -21,7 +29,6 @@ elif age > 11:
 
 
 # Ask 10 questions
-
 print("Question 1")
 answer_1 = input("What is the Maori word for 'Family'? ")
 if answer_1 == "Whanau".lower():
@@ -119,4 +126,14 @@ if answer_10 == "Rahoroi".lower():
     print()
 else:
     print(formatter("!", "Incorrect"))
+    print()
+
+
+# output
+play_again = "x"
+play_again = input("\nDo you want to play another round?\n<enter> "
+                           "to play again or 'X' to exit ").lower()
+print()
+if play_again == "x".lower():
+    print(formatter("^", "GOODBYE"))
     print()
